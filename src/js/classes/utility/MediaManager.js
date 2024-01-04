@@ -6,7 +6,7 @@ export default class MediaManager {
         this.scene = config.scene;
         this.model = config.model;
         this.emitter = config.emitter;
-        // console.log('this.emitter', this.emitter)
+
         this.emitter.on(G.PLAY_SOUND, this.playSound, this);
         this.emitter.on(G.MUSIC_CHANGED, this.musicChanged, this);
 
