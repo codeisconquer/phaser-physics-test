@@ -3,6 +3,7 @@ import SceneLoad from "./scenes/SceneLoad";
 import SceneMain from "./scenes/SceneMain";
 import SceneOver from "./scenes/SceneOver";
 import SceneTitle from "./scenes/SceneTitle";
+import ScenePhysics from "./scenes/ScenePhysics";
 import Constants from "./common/Constants";
 
 
@@ -23,7 +24,13 @@ if (isMobile == -1) {
     width: 480,
     height: 640,
     parent: 'phaser-game',
-    scene: [SceneLoad, SceneTitle, SceneMain, SceneOver],
+    physics: {
+      default: 'arcade',
+      arcade: {
+          debug: true
+      }
+  },
+    scene: [ScenePhysics],
   };
 } else {
   config = {
@@ -31,7 +38,13 @@ if (isMobile == -1) {
     width: window.innerWidth,
     height: window.innerHeight,
     parent: 'phaser-game',
-    scene: [SceneLoad, SceneTitle, SceneMain, SceneOver],
+    physics: {
+      default: 'arcade',
+      arcade: {
+          debug: true
+      }
+  },
+    scene: [ScenePhysics],
 
   };
 }
