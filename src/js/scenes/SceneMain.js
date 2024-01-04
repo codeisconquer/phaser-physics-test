@@ -24,7 +24,7 @@ export default class SceneMain extends Phaser.Scene {
             cols: 11
         });
         this.alignGrid.showNumbers();
-        
+
         var btnStart = new FlatButton({ scene: this, emitter: emitter, model: model, key: 'button1', 
             text: 'Fire', event: 'start_game' });
 
@@ -46,6 +46,10 @@ export default class SceneMain extends Phaser.Scene {
     onClick() {
 
         console.log('click...', new Date())
+        const s = new Singleton();
+        const mediaManager = s.mediaManager;
+        mediaManager.playSound("alarm");
+
     }
     update() { }
 
